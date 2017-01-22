@@ -27,6 +27,7 @@ angular.module('app.controllers', ['app.services'])
 				$scope.currentTemp = Math.ceil($scope.current.temperature);
 				$scope.haveData = true;
 				$ionicLoading.hide();
+				$scope.$broadcast('scroll.refreshComplete');
 
 			}, function (error) {
 				alert('Unable to get current conditions');
@@ -35,6 +36,10 @@ angular.module('app.controllers', ['app.services'])
 		}
 
 		getWeather();
+
+		$scope.doRefresh = function () {
+			getWeather();
+		};
 
 		$scope.$watch(function () {
 			return Settings.units
