@@ -7,6 +7,14 @@ angular.module('app.services', [])
         return Settings;
     })
 
+	.factory('Location', function ()  {
+		var Location = {
+			lat: 0,
+			long: 0
+		};
+		return Location;
+	})
+
     .factory('Weather', function($http, $log, Settings, FORECASTIO_KEY) {
         $log.info('Weather Factory');
         var url = 'https://api.darksky.net/forecast/' + FORECASTIO_KEY + '/';
