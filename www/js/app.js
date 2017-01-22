@@ -4,7 +4,6 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('app', ['ionic', 'app.controllers'])
-
     .config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider
           .state('app', {
